@@ -5,13 +5,18 @@ description = "Command-line interface for backend database operations."
 authors = ["Rijumone Choudhuri <mailmeonriju@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-package-mode = false
+packages = [
+    { include = "dat_cli" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 requests = "^2.31.0"
 click = "^8.1.7"
 dat-client = {git = "https://github.com/dat-labs/dat-api-sdk", rev = "main", develop = true}
+
+[tool.poetry.scripts]
+dat-cli = "dat_cli.main:cli"
 
 [build-system]
 requires = ["poetry-core"]
