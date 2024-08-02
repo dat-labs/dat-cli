@@ -1,7 +1,7 @@
 from verified_<actor_type>s.<module_name>.<actor_type> import <actor_name>
 from verified_<actor_type>s.<module_name>.catalog import <actor_name>Catalog
 from verified_<actor_type>s.<module_name>.specs import <actor_name>Specification
-from dat_core.pydantic_models import DatConnectionStatus, DatDocumentStream
+from dat_core.pydantic_models import DatConnectionStatus, DatMessage, Type
 from conftest import *
 
 
@@ -41,4 +41,6 @@ def test_read(valid_connection_object, valid_catalog_object):
         catalog=<actor_name>Catalog(**valid_catalog_object),
     )
     for record in records:
-        assert DatDocumentStream.model_validate(record)
+        if record.type == Type.STATE:
+            continue   
+        assert DatMessage.model_validate(record)
