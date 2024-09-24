@@ -1,5 +1,6 @@
 description: Specification of an actor (source/generator/destination)
 type: object
+title: <actor_name>Specification
 required:
   - connection_specification
   - name
