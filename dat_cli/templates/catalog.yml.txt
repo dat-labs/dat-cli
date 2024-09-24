@@ -1,3 +1,6 @@
+# use the following command to generate the relevant models:
+# datamodel-codegen --input catalog.yml --output catalog.py --output-model-type pydantic_v2.BaseModel
+
 type: object
 properties:
   streams:

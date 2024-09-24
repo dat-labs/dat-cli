@@ -4,7 +4,7 @@ from dat_core.connectors.sources.base import SourceBase
 from dat_core.connectors.sources.stream import Stream
 from verified_sources.<module_name>.specs import <actor_name>Specification
 from verified_sources.<module_name>.catalog import <actor_name>Catalog
-from verified_sources.<module_name>.streams import <module_name>Stream0
+from verified_sources.<module_name>.streams import <actor_name>Stream0
 
 
 class <actor_name>(SourceBase):
@@ -17,5 +17,5 @@ class <actor_name>(SourceBase):
 
     def streams(self, config: Mapping[str, Any], json_schemas: Mapping[str, Mapping[str, Any]]=None) -> List[Stream]:
         return [
-            <module_name>Stream0(config),
+            <actor_name>Stream0(config),
         ]

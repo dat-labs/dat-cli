@@ -1,4 +1,5 @@
 from pytest import fixture
+import os
 
 @fixture()
 def valid_connection_object():
@@ -11,3 +12,11 @@ def valid_catalog_object():
 @fixture()
 def valid_dat_record_message():
     yield '{"type":"STATE","log":null,"spec":null,"connectionStatus":null,"catalog":null,"record":null,"state":{"stream":{"name":"pdf","namespace":"foobarqux","json_schema":{},"read_sync_mode":"INCREMENTAL","write_sync_mode":"APPEND","cursor_field":"string","dir_uris":["bak/MySQL/STAGING/for-dat-gdrive-test"]},"stream_state":{"data":{"string":null},"stream_status":"STARTED"}}}' # TODO; fix this
+
+def pytest_sessionfinish(session, exitstatus):
+    parent = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
+    temp_specs = f'tests{os.path.sep}tmp_spec_model.py'
+    try:
+        os.remove(f'{parent}{os.path.sep}{temp_specs}')
+    except FileNotFoundError:
+        pass        

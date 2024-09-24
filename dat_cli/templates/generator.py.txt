@@ -1,6 +1,7 @@
 import os
-from typing import Any, Optional, Tuple
+from typing import Any, Optional, Tuple, Iterator
 from dat_core.connectors.generators.base import GeneratorBase
+from dat_core.pydantic_models import DatMessage
 from verified_generators.<module_name>.specs import <actor_name>Specification
 
 

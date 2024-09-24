@@ -1,5 +1,9 @@
+# use the following command to generate the relevant models:
+# datamodel-codegen --input specs.yml --output specs.py --output-model-type pydantic_v2.BaseModel
+
 description: Specification of an actor (source/generator/destination)
 type: object
+title: <actor_name>Specification
 required:
   - connection_specification
   - name
@@ -17,9 +21,10 @@ properties:
     description: "Name of the python module for this connector"
     type: string
   connection_specification:
+    allOf:
+    - "$ref": "https://raw.githubusercontent.com/dat-labs/dat-core/main/dat_core/specs/ConnectorSpecification.yml#/definitions/connection_specification"
     description: ConnectorDefinition specific blob. Must be a valid JSON string.
     type: object
-    additionalProperties: true
     properties:
       property_0:
         type: string
