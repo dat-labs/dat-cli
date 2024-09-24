@@ -4,7 +4,7 @@ import click
 import requests
 
 actor_types = ['source', 'generator', 'destination']
-base_template_url = 'https://raw.githubusercontent.com/dat-labs/dat-cli/main'
+base_template_url = 'https://raw.githubusercontent.com/suryaanshrai/dat-cli/feature'
 # base_template_url = 'http://localhost:8000'    # local testing
 api_url = 'http://localhost:8000'
 
