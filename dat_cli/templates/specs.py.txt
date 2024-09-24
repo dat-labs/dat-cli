@@ -6,19 +6,21 @@ from __future__ import annotations
 
 from typing import Any, Dict, Optional
 
-from pydantic import AnyUrl, BaseModel, Field
+from pydantic import AnyUrl, BaseModel, ConfigDict, Field
 from dat_core.pydantic_models import ConnectionSpecification
 
 class ConnectionSpecificationModel(ConnectionSpecification):
-    class Config:
-        extra = 'allow'
+    model_config = ConfigDict(
+        extra='allow',
+    )
 
     property_0: Optional[str] = None
 
 
 class <actor_name>Specification(BaseModel):
-    class Config:
-        extra = 'allow'
+    model_config = ConfigDict(
+        extra='allow',
+    )
 
     documentation_url: Optional[AnyUrl] = None
     name: str = Field(
