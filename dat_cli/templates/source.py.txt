@@ -17,5 +17,5 @@ class <actor_name>(SourceBase):
 
     def streams(self, config: Mapping[str, Any], json_schemas: Mapping[str, Mapping[str, Any]]=None) -> List[Stream]:
         return [
-            <module_name>Stream0(config),
+            <actor_name>Stream0(config),
         ]

@@ -10,10 +10,6 @@ from pydantic import AnyUrl, BaseModel, ConfigDict, Field
 from dat_core.pydantic_models import ConnectionSpecification
 
 class ConnectionSpecificationModel(ConnectionSpecification):
-    model_config = ConfigDict(
-        extra='allow',
-    )
-
     property_0: Optional[str] = None
 
 

@@ -25,7 +25,6 @@ properties:
     - "$ref": "https://raw.githubusercontent.com/dat-labs/dat-core/main/dat_core/specs/ConnectorSpecification.yml#/definitions/connection_specification"
     description: ConnectorDefinition specific blob. Must be a valid JSON string.
     type: object
-    additionalProperties: true
     properties:
       property_0:
         type: string
