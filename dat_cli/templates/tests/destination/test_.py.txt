@@ -1,5 +1,4 @@
 from verified_<actor_type>s.<module_name>.<actor_type> import <actor_name>
-from verified_<actor_type>s.<module_name>.catalog import <actor_name>Catalog
 from verified_<actor_type>s.<module_name>.specs import <actor_name>Specification, ConnectionSpecificationModel
 from dat_core.pydantic_models import DatConnectionStatus, DatDocumentStream
 from conftest import *
