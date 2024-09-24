@@ -18,3 +18,11 @@ def valid_dat_record_message():
             }
         }
     }
+
+def pytest_sessionfinish(session, exitstatus):
+    parent = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
+    temp_specs = f'tests{os.path.sep}tmp_spec_model.py'
+    try:
+        os.remove(f'{parent}{os.path.sep}{temp_specs}')
+    except FileNotFoundError:
+        pass       

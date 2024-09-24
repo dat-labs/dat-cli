@@ -53,30 +53,9 @@ def test_specs_file():
     temp_specs = f'tests{os.path.sep}tmp_spec_model.py'
     yml_to_py('specs.yml', temp_specs)
 
-    from verified_sources.<module_name>.tests.tmp_spec_model import GoogleDriveSpecification as temp_spec
-    from verified_sources.<module_name>.tests.tmp_spec_model import ConnectionSpecificationModel as temp_conn_spec
-    class ConnSpec_temp(ConnSpec):
-        dat_name: str = Field(
-            None, description='Name of the actor instance.', title='Name'
-        )
-        client_secret: str = Field(
-        ..., description='client secret for the project',
-            title='Client Secret',
-            json_schema_extra={
-                'ui-opts': {
-                    'masked': True,
-                }
-            }
-        )
-        refresh_token: str = Field(
-        ..., description='refresh token for the project',
-            title='Refresh Token',
-            json_schema_extra={
-                'ui-opts': {
-                    'masked': True,
-                }
-            }
-        )
+    from verified_<actor_type>s.<module_name>.tests.tmp_spec_model import GoogleDriveSpecification as temp_spec
+    from verified_<actor_type>s.<module_name>.tests.tmp_spec_model import ConnectionSpecificationModel as temp_conn_spec
+
     assert compare_models(temp_spec, <actor_name>Specification) is True
     assert compare_models(temp_conn_spec, ConnectionSpecificationModel) is True
 
