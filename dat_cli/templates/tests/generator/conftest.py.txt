@@ -1,4 +1,5 @@
 from pytest import fixture
+import os
 
 @fixture()
 def valid_connection_object():
